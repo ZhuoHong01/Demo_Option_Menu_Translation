@@ -36,6 +36,25 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here.
+        int id = item.getItemId();
+
+        if (id == R.id.EnglishSelection) {
+            tvTranslatedText.setText("Hello ");
+            return true;
+        } else if (id == R.id.italianSelection) {
+            tvTranslatedText.setText("Ciao");
+            return true;
+        } else {
+            tvTranslatedText.setText("Error translation");
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+
+    @Override
     public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
         super.onCreateContextMenu(menu, v, menuInfo);
         menu.add(0,0,0,"English");
