@@ -42,61 +42,16 @@ public class MainActivity extends AppCompatActivity {
 
         if (id == R.id.EnglishSelection) {
             tvTranslatedText.setText("Hello ");
+            tvTranslatedText2.setText("Bye");
             return true;
         } else if (id == R.id.italianSelection) {
             tvTranslatedText.setText("Ciao");
+            tvTranslatedText2.setText("Addio");
             return true;
         } else {
             tvTranslatedText.setText("Error translation");
         }
 
         return super.onOptionsItemSelected(item);
-    }
-
-
-    @Override
-    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
-        super.onCreateContextMenu(menu, v, menuInfo);
-        menu.add(0,0,0,"English");
-        menu.add(0,1,1,"Italian");
-
-        if(v == tvTranslatedText){
-            wordClicked = "hello";
-        }
-        else if(v == tvTranslatedText2){
-            wordClicked = "bye";
-        }
-    }
-
-    @Override
-    public boolean onContextItemSelected(MenuItem item) {
-        if(item.getItemId()==0) { //check whether the selected menu item ID is 0
-            //code for action
-            Toast.makeText(MainActivity.this, "English is chosen", Toast.LENGTH_SHORT).show();
-            if(wordClicked.equalsIgnoreCase("hello")){
-                if(item.getItemId()==0){
-                    tvTranslatedText.setText("Hello");
-                    tvTranslatedText2.setText("Bye");
-                    return true;
-                }
-            }
-            return true; //menu item successfully handled
-        }
-
-        else if(item.getItemId()==1) { //check if the selected menu item ID is 1
-            //code for action
-            Toast.makeText(MainActivity.this, "Italian is chosen", Toast.LENGTH_SHORT).show();
-            if(wordClicked.equalsIgnoreCase("ciao")){
-                if(item.getItemId()==1){
-                    tvTranslatedText.setText("Ciao");
-                    tvTranslatedText2.setText("Addio");
-                    return true;
-                }
-            }
-            return true;  //menu item successfully handled
-        }
-
-
-        return super.onContextItemSelected(item); //pass menu item to the superclass implementation
     }
 }
