@@ -4,18 +4,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.Menu;
-import android.view.ContextMenu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
     TextView tvTranslatedText;
     TextView tvTranslatedText2;
-
-    String wordClicked = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
